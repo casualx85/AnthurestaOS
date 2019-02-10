@@ -170,3 +170,4 @@ xorg-xwd
 xorg-xwininfo
 xorg-xwud
 yaml-cpp
+pacman-contrib
