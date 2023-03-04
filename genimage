@@ -1,0 +1,3 @@
+#!/bin/bash
+iso_label="ARCH_ANTH"
+xorriso -as mkisofs -iso-level 3 -full-iso9660-filenames -volid "${iso_label}" -eltorito-boot isolinux/isolinux.bin -eltorito-catalog isolinux/boot.cat -no-emul-boot -boot-load-size 4 -boot-info-table -isohybrid-mbr ~/customiso/isolinux/isohdpfx.bin -eltorito-alt-boot -e EFI/archiso/efiboot.img -no-emul-boot -isohybrid-gpt-basdat -output arch-custom.iso ~/customiso

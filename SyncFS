@@ -1,0 +1,10 @@
+#!/bin/bash
+rsync -av --one-file-system --exclude=/proc/* --exclude=/dev/* \
+--exclude=/sys/* --exclude=/tmp/*  --exclude=/lost+found \
+--exclude=/var/tmp/*  --exclude=/root/* \
+--exclude=/var/mail/* --exclude=/var/spool/* --exclude=/media/* \
+--exclude=/etc/fstab --exclude=/etc/mtab --exclude=/etc/hosts \
+--exclude=/etc/timezone --exclude=/etc/shadow* --exclude=/etc/gshadow* \
+--exclude=/etc/X11/xorg.conf* \
+--exclude=/etc/lightdm/lightdm.conf / ~/customiso/arch/x86_64/squashfs-root/
+

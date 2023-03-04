@@ -1,0 +1,14 @@
+#!/bin/bash
+cd /root/custom*/a*/x*/
+#mv squashfs-root/boot/vmlinuz-linux ~/customiso/arch/boot/x86_64/vmlinuz
+#mv squashfs-root/boot/initramfs-linux.img ~/customiso/arch/boot/x86_64/archiso.img
+#rm squashfs-root/boot/initramfs-linux-fallback.img
+echo "#############updating efiboot.img#################"
+mkdir mnt
+#mount -t vfat -o loop ~/customiso/EFI/archiso/efiboot.img mnt
+#cp ~/customiso/arch/boot/x86_64/vmlinuz mnt/EFI/archiso/vmlinuz.efi
+#cp ~/customiso/arch/boot/x86_64/archiso.img mnt/EFI/archiso/archiso.img
+umount mnt && rmdir mnt
+mksquashfs squashfs-root airootfs.sfs && rm -r squashfs-root && md5sum airootfs.sfs > airootfs.md5
+
+
